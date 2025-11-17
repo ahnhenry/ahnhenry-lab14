@@ -224,6 +224,7 @@ public class Lab14_Tester {
     assertEquals("The number 47483647 has 4 factors\tThe number 362880 has 160 factors", line);
   }
 
+  
   @Test
   public void test7() {
     System.out.println("checking eight clients communication with server for large number");

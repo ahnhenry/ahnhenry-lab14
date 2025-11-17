@@ -232,21 +232,12 @@ public class Lab14_Tester {
     Server server = null;
     try{
         server = new Server(2021);
-        ArrayList<LocalDateTime> times4 = server.getConnectedTimes();
-        Duration duration4 = Duration.between(times4.get(0), times4.get(times4.size()-1));
-        long seconds3 = duration4.toMillis();
-        System.out.println("toMillis after new Server: " + seconds3);
 
     }
     catch (Exception e) {
         System.err.print("Could not open server");
         e.printStackTrace();
     }
-
-    ArrayList<LocalDateTime> times4 = server.getConnectedTimes();
-    Duration duration4 = Duration.between(times4.get(0), times4.get(times4.size()-1));
-    long seconds4 = duration4.toMillis();
-    System.out.println("toMillis before new Clients: " + seconds4);
 
     String line = "An exception happened.";
     try {
@@ -259,10 +250,6 @@ public class Lab14_Tester {
         Client client7 = new Client("localhost", 2021);
         Client client8 = new Client("localhost", 2021);
 
-        ArrayList<LocalDateTime> times3 = server.getConnectedTimes();
-        Duration duration3 = Duration.between(times3.get(0), times3.get(times3.size()-1));
-        long seconds3 = duration3.toMillis();
-        System.out.println("toMillis after new Clients: " + seconds3);
 
         client1.handshake();
         client2.handshake();
@@ -273,10 +260,6 @@ public class Lab14_Tester {
         client7.handshake();
         client8.handshake();
         Thread.sleep(1000); // give it a second to actually flush
-        ArrayList<LocalDateTime> times2 = server.getConnectedTimes();
-        Duration duration2 = Duration.between(times2.get(0), times2.get(times2.size()-1));
-        long seconds2 = duration2.toMillis();
-        System.out.println("toMillis after handshakes: " + seconds2);
 
         server.serve(8);
         Thread.sleep(1000); // give it a second to actually flush

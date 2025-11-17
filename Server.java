@@ -18,6 +18,11 @@ public class Server {
 
 
     public void disconnect(){
+        if(timelist != null){
+            for(int i = 0; i < timelist.size(); i++){
+                timelist.remove(i);
+            }
+        }
         try{
             if(serverSock != null){
                 serverSock.close();
@@ -33,11 +38,16 @@ public class Server {
     }
 
     public void serve(int number) throws IOException{
-        
+       //System.out.println("Current timelist size: " + timelist.size());
+        timelist.clear();
         for(int i = 0; i < number; i++){
+
                 Socket clientSock = serverSock.accept();
-                new ClientHandler(clientSock).start();
+        
+        
                 timelist.add(LocalDateTime.now());
+                new ClientHandler(clientSock).start();
+                
         }
     }
 

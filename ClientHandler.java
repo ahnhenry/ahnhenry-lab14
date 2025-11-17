@@ -11,20 +11,11 @@ public class ClientHandler extends Thread {
         this.sock=sock;
     }
 
-    public int factor(long num){
-        int count = 0;
-
+    // public int factor(long num){
         
-        for(int i = 1; i <= num; i++){
-            if(num % i == 0){
-                count++;
-                
-            }
 
-        }
-
-        return count;
-    }
+    //     return count;
+    // }
 
     public void run(){
         PrintWriter out = null;
@@ -58,12 +49,15 @@ public class ClientHandler extends Thread {
                 out.flush();
                 return;
             }
-            
-            
 
-            long factorCount = factor(num);
+            int count = 0;
+            for(int i = 1; i <= num; i++){
+                if(num % i == 0){
+                    count++; 
+                }
+            }
 
-            out.println("The number " + num + " has " + factorCount + " factors");
+            out.println("The number " + num + " has " + count + " factors");
             out.flush();
             sock.close();
 

@@ -11,12 +11,6 @@ public class ClientHandler extends Thread {
         this.sock=sock;
     }
 
-    // public int factor(long num){
-        
-
-    //     return count;
-    // }
-
     public void run(){
         PrintWriter out = null;
         BufferedReader in = null;

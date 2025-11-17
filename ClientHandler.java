@@ -1,5 +1,5 @@
 import java.io.BufferedReader;
-import java.io.IOException;
+//import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
@@ -11,12 +11,12 @@ public class ClientHandler extends Thread {
         this.sock=sock;
     }
 
-    public int factor(int num){
+    public int factor(long num){
         int count = 0;
         
         for(int i = 1; i <= num; i++){
             if(num % i == 0){
-                count += 2;
+                count++;
             }
         }
 
@@ -41,10 +41,10 @@ public class ClientHandler extends Thread {
             }
 
             String serveNum = in.readLine();
-            int num = 0;
+            long num = 0;
 
             try{
-                num = Integer.parseInt(serveNum);
+                num = Long.parseLong(serveNum);
             }catch(Exception e){
                 System.out.println("There was an exception on the server");
                 
@@ -58,7 +58,7 @@ public class ClientHandler extends Thread {
             
             
 
-            int factorCount = factor(num);
+            long factorCount = factor(num);
 
             out.println("The number " + num + " has " + factorCount + " factors");
             out.flush();

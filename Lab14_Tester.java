@@ -293,7 +293,9 @@ public class Lab14_Tester {
 
      Server server = null;
     try{
+        //System.out.println("test 8: reach 1 try-catch: before new Server");
         server = new Server(2021);
+        //System.out.println("test 8: reach 1 try-catch: after new Server"); 
     }
     catch (Exception e) {
         System.err.print("Could not open server");

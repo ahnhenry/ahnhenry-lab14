@@ -13,12 +13,17 @@ public class Server {
 
     public Server(int port) throws IOException{
         this.port = port;
+
         try{
-            this.serverSock = new ServerSocket(port);
+            this.serverSock = new ServerSocket(this.port);
         }catch(IOException e){
             System.err.println("Cannot establish server socket");
             System.exit(1);
-        }
+        }  
+        
+        
+        
+        
     }
 
 

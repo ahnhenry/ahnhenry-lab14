@@ -1,26 +1,54 @@
+import java.io.IOError;
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.time.*;
 import java.util.ArrayList;
 
 public class Server {
-    int port;
-    static ArrayList<Client> list = new ArrayList<Client>();
+    private int port;
+    private ServerSocket serverSock;
+    private LocalDateTime time;
+    private static ArrayList<LocalDateTime> timelist = new ArrayList<LocalDateTime>();
 
-    public void server(int port){
+
+    public Server(int port) throws IOException{
         this.port = port;
+        try{
+            this.serverSock = new ServerSocket(port);
+        }catch(IOException e){
+            System.err.println("Cannot establish server socket");
+            System.exit(1);
+        }
     }
 
-    private void storeClient(Client c){
-        list.add(c);
-    }
 
     public void disconnect(){
-
+        try{
+            serverSock.close();
+        }
+        catch(Exception e){
+            System.out.println("could not disconnect socket: "+ serverSock.getLocalSocketAddress());
+        }
     }
 
-    public int getConnectedTimes(){
-        LocalDateTime time ;
-        
-
-        return;
+    public ArrayList<LocalDateTime> getConnectedTimes(){
+        return timelist;
     }
+
+    public void serve(int number) throws IOException{
+
+        for(int i = 0; i < number; i++){
+            try{
+                Socket clientSock = serverSock.accept();
+                time = LocalDateTime.now();
+                timelist.add(time);
+                new ClientHandler(clientSock).start();
+            }
+            catch(IOException e){
+                break;
+            }
+        }
+    }
+
 }

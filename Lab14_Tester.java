@@ -43,7 +43,7 @@ public class Lab14_Tester {
     } catch (Exception e){
         e.printStackTrace();
     }
-
+    System.out.println("test 1 line is:" + line + "\n");
     assertEquals("12345", line);
 
   }
@@ -78,6 +78,7 @@ public class Lab14_Tester {
         e.printStackTrace();
     }
     server.disconnect();
+    System.out.println("test 2 line is:" + line + "\n");
     assertEquals("The number 17 has 2 factors", line);
   }
 
@@ -112,6 +113,7 @@ public class Lab14_Tester {
         e.printStackTrace();
     }
     server.disconnect();
+    System.out.println("test 3 line is:" + line + "\n");
     assertEquals("The number 362880 has 160 factors", line);
   }
 
@@ -145,6 +147,7 @@ public class Lab14_Tester {
         e.printStackTrace();
     }
     server.disconnect();
+    System.out.println("test 4 line is:" + line + "\n");
     assertEquals("The number 2147483642 has 8 factors", line);
   }
 
@@ -178,6 +181,7 @@ public class Lab14_Tester {
         e.printStackTrace();
     }
     server.disconnect();
+    System.out.println("test 5 line is:" + line + "\n");
     assertEquals("There was an exception on the server", line);
   }
 
@@ -216,6 +220,7 @@ public class Lab14_Tester {
         e.printStackTrace();
     }
     server.disconnect();
+    System.out.println("test 6 line is:" + line + "\n");
     assertEquals("The number 47483647 has 4 factors\tThe number 362880 has 160 factors", line);
   }
 
@@ -271,12 +276,14 @@ public class Lab14_Tester {
         Duration duration = Duration.between(times.get(0), times.get(times.size()-1));
         long seconds = duration.toMillis();
         System.out.println("toMillis: " + seconds);
+        System.out.println("test 7 toMillis is: "+ seconds);
         assertEquals(500, seconds, 500);
 
     } catch (Exception e){
         e.printStackTrace();
     }
     server.disconnect();
+    System.out.println("test 7 line is:" + line + "\n");
     assertEquals("The number 2147483642 has 8 factors\tThe number 2147483642 has 8 factors\tThe number 2147483642 has 8 factors\tThe number 2147483642 has 8 factors\tThe number 2147483642 has 8 factors\tThe number 2147483642 has 8 factors\tThe number 2147483642 has 8 factors\tThe number 2147483642 has 8 factors", line);
   }
 
@@ -319,6 +326,7 @@ public class Lab14_Tester {
         e.printStackTrace();
     }
 
+    System.out.println("test 8 line is:" + line + "\n");
     assertEquals("couldn't handshake", line);
 
   }

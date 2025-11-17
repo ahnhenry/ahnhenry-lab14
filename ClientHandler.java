@@ -13,11 +13,14 @@ public class ClientHandler extends Thread {
 
     public int factor(long num){
         int count = 0;
+
         
         for(int i = 1; i <= num; i++){
             if(num % i == 0){
                 count++;
+                
             }
+
         }
 
         return count;

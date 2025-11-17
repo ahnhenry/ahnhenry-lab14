@@ -249,6 +249,11 @@ public class Lab14_Tester {
         Client client7 = new Client("localhost", 2021);
         Client client8 = new Client("localhost", 2021);
 
+        ArrayList<LocalDateTime> times3 = server.getConnectedTimes();
+        Duration duration3 = Duration.between(times3.get(0), times3.get(times3.size()-1));
+        long seconds3 = duration3.toMillis();
+        System.out.println("toMillis after new Clients: " + seconds3);
+
         client1.handshake();
         client2.handshake();
         client3.handshake();
@@ -258,6 +263,10 @@ public class Lab14_Tester {
         client7.handshake();
         client8.handshake();
         Thread.sleep(1000); // give it a second to actually flush
+        ArrayList<LocalDateTime> times2 = server.getConnectedTimes();
+        Duration duration2 = Duration.between(times2.get(0), times2.get(times2.size()-1));
+        long seconds2 = duration2.toMillis();
+        System.out.println("toMillis after handshakes: " + seconds2);
 
         server.serve(8);
         Thread.sleep(1000); // give it a second to actually flush
@@ -277,7 +286,7 @@ public class Lab14_Tester {
         Duration duration = Duration.between(times.get(0), times.get(times.size()-1));
         long seconds = duration.toMillis();
         System.out.println("toMillis: " + seconds);
-        System.out.println("test 7 toMillis is: "+ seconds);
+        System.out.println("total test 7 toMillis is: "+ seconds);
         assertEquals(500, seconds, 500);
 
     } catch (Exception e){

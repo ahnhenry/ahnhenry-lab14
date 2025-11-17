@@ -1,0 +1,35 @@
+commit e8d6baf87c887ef62803b47d79c6f2182cc290ec
+Author: Ahn Laurie Henry <ahn.lh2006@gmail.com>
+Date:   Mon Nov 17 02:15:18 2025 -0500
+
+    when test 7 skipped, test 8 passes; problem with time complexity of code possibly cuz takes too much time then it should
+
+commit 49b7f8d96ef038c872932052fad065df96b5ed60
+Author: Ahn Laurie Henry <ahn.lh2006@gmail.com>
+Date:   Mon Nov 17 02:12:49 2025 -0500
+
+    changed factor method from ints to long but test 7 and 8 still fail; test 8 might fail because test 7 fails and server does not disconnect
+
+commit e53cc0ff0c0884b326fb2d97beca20eb23558b42
+Author: Ahn Laurie Henry <ahn.lh2006@gmail.com>
+Date:   Mon Nov 17 00:57:23 2025 -0500
+
+    test 7 fails: problem with miliseconds, output 16275; test 8 fail
+
+commit e558bbd4be04e88e64a646f605bb9f79e6f5dab8
+Author: Ahn Laurie Henry <ahn.lh2006@gmail.com>
+Date:   Mon Nov 17 00:33:54 2025 -0500
+
+    test 5, 7, 8 fail still
+
+commit 240a504cb8a91da17a24cd4471149603feede334
+Author: Ahn Laurie Henry <ahn.lh2006@gmail.com>
+Date:   Mon Nov 10 14:58:41 2025 -0500
+
+    begun implementing skeleton
+
+commit 9735a66baf3b4facd4764b23160a01a16929afb5
+Author: Ahn Laurie Henry <ahn.lh2006@gmail.com>
+Date:   Mon Nov 10 14:17:03 2025 -0500
+
+    added test file and client and server files

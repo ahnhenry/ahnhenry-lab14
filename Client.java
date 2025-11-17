@@ -16,17 +16,9 @@ public class Client {
     public Client(String address, int port) throws IOException{
         this.address = address;
         this.port = port;
-        try{
-            this.sock = new Socket(address, port);
-            this.out = new PrintWriter(sock.getOutputStream());
-            this.in = new BufferedReader(new InputStreamReader(sock.getInputStream()));
-        }catch(IOException e){
-            e.printStackTrace();
-        }
-
-
-
-
+        this.sock = new Socket(address, port);
+        this.out = new PrintWriter(sock.getOutputStream());
+        this.in = new BufferedReader(new InputStreamReader(sock.getInputStream()));
     }
 
     public void handshake(){

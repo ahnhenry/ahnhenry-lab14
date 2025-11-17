@@ -1,4 +1,3 @@
-import java.io.IOError;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -39,15 +38,10 @@ public class Server {
     public void serve(int number) throws IOException{
 
         for(int i = 0; i < number; i++){
-            try{
                 Socket clientSock = serverSock.accept();
                 time = LocalDateTime.now();
                 timelist.add(time);
                 new ClientHandler(clientSock).start();
-            }
-            catch(IOException e){
-                break;
-            }
         }
     }
 

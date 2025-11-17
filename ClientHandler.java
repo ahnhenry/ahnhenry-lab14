@@ -13,9 +13,10 @@ public class ClientHandler extends Thread {
 
     public int factor(int num){
         int count = 0;
+        
         for(int i = 1; i <= num; i++){
             if(num % i == 0){
-                count++;
+                count += 2;
             }
         }
 
@@ -44,14 +45,15 @@ public class ClientHandler extends Thread {
 
             try{
                 num = Integer.parseInt(serveNum);
-                if(num > 2147483642){
-                    out.println("There was an exception on the server");
-                    out.flush();
-                    return;
-                }
             }catch(Exception e){
                 System.out.println("There was an exception on the server");
                 
+            }
+
+            if(num > 2147483642 || num == 0){
+                out.println("There was an exception on the server");
+                out.flush();
+                return;
             }
             
             
@@ -66,6 +68,7 @@ public class ClientHandler extends Thread {
 
         }catch(Exception e){
             System.out.println("Connection lost: "+sock.getRemoteSocketAddress());
+            e.printStackTrace();
         }
     }
 }

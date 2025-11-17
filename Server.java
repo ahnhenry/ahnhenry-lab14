@@ -36,8 +36,8 @@ public class Server {
         
         for(int i = 0; i < number; i++){
                 Socket clientSock = serverSock.accept();
-                timelist.add(LocalDateTime.now());
                 new ClientHandler(clientSock).start();
+                timelist.add(LocalDateTime.now());
         }
     }
 

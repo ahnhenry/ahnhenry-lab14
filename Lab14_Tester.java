@@ -232,11 +232,21 @@ public class Lab14_Tester {
     Server server = null;
     try{
         server = new Server(2021);
+        ArrayList<LocalDateTime> times4 = server.getConnectedTimes();
+        Duration duration4 = Duration.between(times4.get(0), times4.get(times4.size()-1));
+        long seconds3 = duration4.toMillis();
+        System.out.println("toMillis after new Server: " + seconds3);
+
     }
     catch (Exception e) {
         System.err.print("Could not open server");
         e.printStackTrace();
     }
+
+    ArrayList<LocalDateTime> times4 = server.getConnectedTimes();
+    Duration duration4 = Duration.between(times4.get(0), times4.get(times4.size()-1));
+    long seconds4 = duration4.toMillis();
+    System.out.println("toMillis before new Clients: " + seconds4);
 
     String line = "An exception happened.";
     try {

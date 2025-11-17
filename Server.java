@@ -18,11 +18,6 @@ public class Server {
 
 
     public void disconnect(){
-        if(timelist != null){
-            for(int i = 0; i < timelist.size(); i++){
-                timelist.remove(i);
-            }
-        }
         try{
             if(serverSock != null){
                 serverSock.close();

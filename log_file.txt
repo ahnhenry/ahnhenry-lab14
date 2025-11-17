@@ -1,3 +1,21 @@
+commit ef06a3f31453ebb74667ecade7b1dac3c554cbac
+Author: Ahn Laurie Henry <ahn.lh2006@gmail.com>
+Date:   Mon Nov 17 03:48:20 2025 -0500
+
+    connected times should have bee cleared before adding new times in. by checking size, I found that it wasn't 0 at the beginning of test 7
+
+commit bf2b4faa27b2c5bd3da852a98131a8d940a5f29f
+Author: Ahn Laurie Henry <ahn.lh2006@gmail.com>
+Date:   Mon Nov 17 03:19:18 2025 -0500
+
+    somehow connected times is already set before clients even connect, should probably empty the list when disconnecting
+
+commit 5131a1288a79b61a48ea43d4a19e6d350313f928
+Author: Ahn Laurie Henry <ahn.lh2006@gmail.com>
+Date:   Mon Nov 17 03:09:22 2025 -0500
+
+    test 7: adding clients takes the most time: about 14000 compared to 500
+
 commit e8d6baf87c887ef62803b47d79c6f2182cc290ec
 Author: Ahn Laurie Henry <ahn.lh2006@gmail.com>
 Date:   Mon Nov 17 02:15:18 2025 -0500

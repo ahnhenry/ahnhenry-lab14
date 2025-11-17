@@ -44,7 +44,7 @@ public class ClientHandler extends Thread {
                 
             }
 
-            if(num > 2147483642 || num == 0){
+            if(num <= 0 || num > 3000000000L){
                 out.println("There was an exception on the server");
                 out.flush();
                 return;
